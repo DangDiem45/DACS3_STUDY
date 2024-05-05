@@ -1,5 +1,6 @@
 import 'package:dacs3/screens/home/course_home.dart';
 import 'package:dacs3/screens/intro/intro_screen.dart';
+import 'package:dacs3/screens/intro/welcome.dart';
 import 'package:dacs3/util/route_names.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        RouteNames.intro: (context) => const IntroScreen(),
+        RouteNames.intro: (context) => Welcome(),
         RouteNames.courseHome: (context) => const CourseHome(),
       },
     );
