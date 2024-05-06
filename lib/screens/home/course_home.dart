@@ -134,7 +134,7 @@ class _BottomOptionState extends State<CourseHome> {
       },
       {
         "icon": "assets/icons/play.svg",
-        "page": const MyCourseList(),
+        "page": MyCourseList(),
       },
       {
         "icon": "assets/icons/chat.svg",

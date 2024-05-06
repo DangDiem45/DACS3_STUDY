@@ -60,7 +60,8 @@ class CourseDataProvider {
         100,
         '2.5 Hours',
         15,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "2",
         "Flutter with Firebase",
@@ -74,7 +75,8 @@ class CourseDataProvider {
         50,
         '3 Hours',
         10,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "3",
         "Complete Web 3.0",
@@ -88,7 +90,8 @@ class CourseDataProvider {
         75,
         '2.7 Hours',
         15,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "4",
         "Learn Programming Trick",
@@ -102,7 +105,8 @@ class CourseDataProvider {
         40,
         '5 Hours',
         30,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "5",
         "Complete React Course",
@@ -116,7 +120,8 @@ class CourseDataProvider {
         120,
         '4.3 Hours',
         25,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "6",
         "Learn Marketing",
@@ -130,7 +135,8 @@ class CourseDataProvider {
         150,
         '4 Hours',
         20,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "7",
         "Marketing MasterClass",
@@ -144,7 +150,8 @@ class CourseDataProvider {
         80,
         '4.2 Hours',
         21,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "8",
         "How to Increase Sales",
@@ -158,7 +165,8 @@ class CourseDataProvider {
         100,
         '4.5 Hours',
         20,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "9",
         "Marketing Strategy",
@@ -172,7 +180,8 @@ class CourseDataProvider {
         120,
         '3.5 Hours',
         32,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "10",
         "Invest Money Wisely",
@@ -186,7 +195,8 @@ class CourseDataProvider {
         100,
         '6 Hours',
         35,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "11",
         "Crypto Technical Analysis",
@@ -200,7 +210,8 @@ class CourseDataProvider {
         90,
         '3 Hours',
         22,
-        sectionList),
+        sectionList,
+        50),
     Course(
         "12",
         "All about Crypto",
@@ -214,6 +225,7 @@ class CourseDataProvider {
         75,
         '3.5 Hours',
         28,
-        sectionList),
+        sectionList,
+        50),
   ];
 }

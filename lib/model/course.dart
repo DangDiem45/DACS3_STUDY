@@ -28,6 +28,8 @@ class Course {
 
   final List<Section> _sections;
 
+  int _progress = 0;
+
   Course(
       this._id,
       this._title,
@@ -41,12 +43,17 @@ class Course {
       this._price,
       this._duration,
       this._lessonNo,
-      this._sections);
+      this._sections,
+      this._progress);
 
   bool get isFavorite => _isFavorite;
 
   set isFavorite(bool value) {
     _isFavorite = value;
+  }
+
+  set progress(int value) {
+    _progress = value;
   }
 
   double get rate => _rate;
@@ -72,4 +79,6 @@ class Course {
   int get lessonNo => _lessonNo;
 
   List<Section> get sections => _sections;
+
+  int get progress => _progress;
 }
