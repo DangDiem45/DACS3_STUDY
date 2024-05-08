@@ -1,5 +1,7 @@
+import 'package:dacs3/arguments/course_arguments.dart';
 import 'package:dacs3/constants.dart';
 import 'package:dacs3/model/course.dart';
+import 'package:dacs3/util/route_names.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +24,11 @@ class CourseItem extends StatelessWidget {
           ),
           child: InkWell(
             onTap: (){
-
+              Navigator.pushNamed(
+                  context,
+                  RouteNames.courseDetails,
+                  arguments: CourseArgument(course)
+              );
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

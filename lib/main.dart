@@ -1,3 +1,5 @@
+import 'package:dacs3/arguments/course_arguments.dart';
+import 'package:dacs3/screens/details/course_details.dart';
 import 'package:dacs3/screens/home/course_home.dart';
 import 'package:dacs3/screens/intro/intro_screen.dart';
 import 'package:dacs3/screens/intro/welcome.dart';
@@ -21,6 +23,13 @@ class MyApp extends StatelessWidget {
       routes: {
         RouteNames.intro: (context) => Welcome(),
         RouteNames.courseHome: (context) => const CourseHome(),
+      },
+
+      onGenerateRoute: (settings){
+        if(settings.name == RouteNames.courseDetails){
+            final args = settings.arguments as CourseArgument;
+            return MaterialPageRoute(builder: (context) => CourseDetails(course: args.course));
+        }
       },
     );
   }
