@@ -9,16 +9,17 @@ import 'package:dacs3/screens/home/widget/offer.dart';
 import 'package:dacs3/screens/home/widget/title.dart';
 import 'package:dacs3/screens/search/explore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
-class CourseHome extends StatefulWidget {
+class CourseHome extends ConsumerStatefulWidget {
   const CourseHome({super.key});
 
   @override
-  State<CourseHome> createState() => _BottomOptionState();
+  ConsumerState<CourseHome> createState() => _BottomOptionState();
 }
 
-class _BottomOptionState extends State<CourseHome> {
+class _BottomOptionState extends ConsumerState<CourseHome> {
   int activePageIndex = 0;
 
   void onPageIndexChange(int index) {
@@ -119,7 +120,7 @@ class _BottomOptionState extends State<CourseHome> {
                       const LectureList(),
                       const FeatureCourses(),
                       const CategoryList(),
-                      const CourseList(),
+                      CourseList(ref: ref,),
                     ],
                   ),
                 ),

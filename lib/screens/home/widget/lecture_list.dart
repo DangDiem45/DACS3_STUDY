@@ -1,3 +1,5 @@
+import 'package:dacs3/data_provider/lecture_data.dart';
+import 'package:dacs3/screens/home/widget/lecture_item.dart';
 import 'package:flutter/material.dart';
 
 class LectureList extends StatelessWidget {
@@ -5,294 +7,46 @@ class LectureList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lectureList = LectureData.lectureList;
     return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [ 
-            const Padding(
-              padding: EdgeInsets.all(0),
-              child: Text(
-                "Đề luyện thi",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold
-                ),
-                textAlign: TextAlign.start,
-              ),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Các Môn Học",
+          style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey.shade800
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        SizedBox(
+          height: 400,
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              childAspectRatio: 0.85,
             ),
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Center(
-                child: Wrap(
-                  spacing: 15.0,
-                  runSpacing: 15.0,
+            shrinkWrap: true,
+            physics: const ScrollPhysics(),
+            itemCount: lectureList.length,
+            itemBuilder: (context, index) {
+              final lecture = lectureList[index];
+              return Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/calculating.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Toán", style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/books.png", width: 70,),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Ngữ Văn", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/united-kingdom.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Tiếng anh", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/history.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Lịch Sử", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/diali.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Địa Lý", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/gdcd.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("GDCD", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/ly.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Vật Lý", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/hoa.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Hóa Học", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 120,
-                      child: Card(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        elevation: 2.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0)
-                        ),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/sinh.png", width: 70),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text("Sinh Học", style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12
-                                ),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    LectureItem(lecture: lecture),
                   ],
                 ),
-              ),
-            )
-          ],
-        );
+              );
+            },
+          ),
+        )
+      ],
+    );
   }
 }
